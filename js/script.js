@@ -117,7 +117,7 @@ async function main() {
 }
 
 //tabela de acionamento central
-document.getElementById('gerarTexto').addEventListener('click', () => {
+document.getElementById('gerarTexto_tab').addEventListener('click', () => {
     let texto = "";
 
     // Contato com o condutor
