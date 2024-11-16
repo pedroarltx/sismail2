@@ -1,0 +1,331 @@
+/* Variáveis do CSS */
+:root {
+    --primary-color: #007BFF;
+    --text-color: #333;
+    --background-color: #f4f4f4;
+    --input-padding: 5px;
+    --input-margin: 9px;
+    --border-radius: 15px;
+    --box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    --btn-padding: 5px 25px;
+    --btn-font-size: 16px;
+    --btn-radius: 15px;
+    --btn-bg-color: var(--primary-color);
+    --btn-hover-color: #D9910D;
+}
+
+/* Resetando margens e paddings padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h2,
+p{
+    margin: 10px 10px;
+}
+/* Estilos gerais para o body */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 10px;
+    background-color: var(--background-color);
+}
+
+#textoGerado,
+.content, 
+#alerta {
+    display: none;
+}
+
+textarea, #Ocorrência {
+    width: 100%;
+    padding: 10px;
+    resize: none;
+    border-radius: var(--border-radius);
+    margin-top: 5px;
+}
+#searchInput{
+    width: 560px;
+}
+textarea {
+    height: 350px;
+}
+
+#Ocorrência {
+    height: 50px;
+}
+
+.toggle-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+.question {
+    margin-bottom: 10px;
+}
+
+label {
+    margin-left: 10px;
+    display: inline-block;
+}
+
+#alerta {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #4caf50;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1000;
+    transition: opacity 0.5s ease;
+}
+
+.qboxtrat, .tab-container > article, section {
+    background-color: white;
+    border: 2px solid #ccc;
+    border-radius: var(--border-radius);
+    margin: 85px 5px 5px 5px;
+    padding: 10px;
+    width: 600px;
+    height: auto;
+    box-shadow: var(--box-shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+}
+.tab-container1 > article, section{
+    background-color: white;
+    border: 2px solid #ccc;
+    border-radius: var(--border-radius);
+    margin: 30px 5px 5px 5px;
+    padding: 10px;
+    width: 600px;
+    box-shadow: var(--box-shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tab-container .tab-container-notes{
+    margin: 85px 5px 5px 5px;
+}
+
+.tab-container .trat_qbox{
+    margin: 10px 2px 10px 60px;
+    width: 350px;
+}
+.tab-container .rest{
+    width: 400px;
+}
+
+.tab-container .email_restabelecimento{
+    width: 400px;
+}
+
+
+@media (max-width: 768px) {
+    .tab-container > article, section {
+        width: 350px;
+        margin: 10px;
+    }.tab-container1 > article, section {
+        width: 350px;
+        margin: 10px;
+    }
+}
+
+.qboxtrat:hover, .tab-container > article:hover, section:hover {
+    transform: scale(1.02);
+}
+
+.qboxtrat:hover, .tab-container1 > article:hover, section:hover {
+    transform: scale(1.02);
+}
+
+button {
+    padding: var(--btn-padding);
+    margin: 8px 5px;
+    background-color: var(--btn-bg-color);
+    color: white;
+    border: none;
+    border-radius: var(--btn-radius);
+    font-size: var(--btn-font-size);
+    cursor: pointer;
+    transition: background-color 0.1s ease, transform 0.35s ease;
+}
+
+button:active {
+    transform: scale(0.50);
+    background-color: var(--btn-hover-color);
+}
+
+.title {
+    font-size: 24px;
+    color: var(--text-color);
+}
+
+.tab-container,
+.tab-container1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.tab-container h2,
+.tab-container1 h2 {
+    font-size: 20px;
+    text-align: center;
+    color: var(--primary-color);
+    margin-top: 5px;
+}
+
+.tab-container p, .tab-container ul li,
+.tab-container1 p, .tab-container1 ul li {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #555;
+}
+
+.tab-container ul,
+.tab-container1 ul {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+.container {
+    overflow-x: auto;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.table-section {
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+#resultTable {
+    width: 100%;
+    height: 185px;
+    border-collapse: collapse;
+    box-sizing: border-box;
+}
+
+#resultTable th, #resultTable td {
+    padding: 12px;
+    text-align: center;
+    font-size: 9px;
+    border-radius: var(--border-radius);
+}
+
+#resultTable th {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+#resultTable tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#resultTable tr:hover {
+    background-color: #ddd;
+}
+
+input[type="text"], input[type="number"] {
+    padding: var(--input-padding);
+    margin: var(--input-margin);
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius);
+    font-size: 12px;
+    width: 350px;
+    text-align: center;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus, input[type="number"]:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+@media (max-width: 768px) {
+    input[type="text"] {
+        width: 200px;
+    }
+}
+
+#nome_motorista,
+#nome_responsavel,
+#numero_motorista,
+#numero_responsavel,
+#nome_policial,
+#numero_policial{
+    width: 130px; 
+}
+
+
+
+#Placa{
+    position: relative;
+    left: 45px;
+}
+#Carreta{
+    position: relative;
+    left: 33px;
+}
+#Motorista{
+    position: relative;
+    left: 21px;
+}
+#Operação{
+    position: relative;
+    left: 17px;
+}
+#Carga{
+    position: relative;
+    left: 41px;
+}
+#Localização{
+    position: relative;
+    left: 5px;
+}
+#Situação{
+    position: relative;
+    left: 25px;
+}
+#cor{
+    position: relative;
+    left: 46px;
+}
+#cpf{
+    position: relative;
+    left: 40px;
+}
+#veiculo{
+    position: relative;
+    left: 10px;
+}
+#modelo{
+    position: relative;
+    left: 23px;
+}
+#carreta_pr{
+    position: relative;
+    left: 22px;
+}
+#motorista_pr{
+    position: relative;
+    left: 10px;
+}
+#cavalo{
+    position: relative;
+    left: 25px;
+}
+#veiculo{
+    position: relative;
+    left: 23px;
+}
+#local{
+    position: relative;
+    left: 35px;
+}
