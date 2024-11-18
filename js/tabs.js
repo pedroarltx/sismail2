@@ -58,3 +58,26 @@ document.getElementById("clearButton1").addEventListener("click", function() {
       }, 500);
   }, 2000);
 });
+
+
+function copiarTexto(texto){
+  // Cria um campo de input temporário para copiar o conteúdo
+  const tempInput = document.createElement("textarea");
+  tempInput.value = texto;
+  document.body.appendChild(tempInput);
+  tempInput.select();
+  document.execCommand("copy");
+  document.body.removeChild(tempInput);
+
+  // Exibir um alerta informando que o texto foi copiado
+  const alerta = document.getElementById('alerta');
+  alerta.style.display = 'block';
+  alerta.style.opacity = '1';
+
+  setTimeout(() => {
+      alerta.style.opacity = '0';
+      setTimeout(() => {
+          alerta.style.display = 'none';
+      }, 500);
+  }, 2000);
+}
