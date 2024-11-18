@@ -35,6 +35,8 @@ nav.menu-lateral.expandir{
 .btn-expandir{
     width: 100%;
     padding-left: 10px;
+    position: fixed;
+    top: 5px;
 }
 
 .btn-expandir > i{
@@ -66,7 +68,7 @@ ul li.item-menu a{
     font-size: 20px;
     padding: 15px 4%;
     display: flex;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
     line-height: 40px;
 }
 
@@ -82,6 +84,6 @@ nav.menu-lateral.expandir .txt-link{
 }
 
 ul li.item-menu a .icon > i{
-    font-size: 30px;
+    font-size: 25px;
     margin-left: 10px;
 }

@@ -132,3 +132,28 @@ document.addEventListener('DOMContentLoaded', () => {
       document.getElementById('numero_policial').value = '';
   });
 });
+
+//Botoa de copiar All
+function copiarTexto(id) {
+    const paragrafo = document.getElementById(id);
+    const textarea = document.createElement("textarea");
+    textarea.value = paragrafo.textContent;
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand("copy");
+    document.body.removeChild(textarea);
+    
+    // Mostra a mensagem de alerta
+    const alerta = document.getElementById('alerta');
+    alerta.style.display = 'block';
+    alerta.style.opacity = '1';
+    
+    // Oculta a mensagem após 2 segundos
+    setTimeout(() => {
+        alerta.style.opacity = '0';
+        setTimeout(() => {
+            alerta.style.display = 'none';
+        }, 500); // Tempo para a animação de desaparecimento
+    }, 2000);
+}
+
