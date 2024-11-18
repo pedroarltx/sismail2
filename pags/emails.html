@@ -75,30 +75,32 @@
         <div class="question">
             <p>Contato com o condutor?</p>
             <label>
-                <input type="radio" name="contato_condutor" value="sim"> Sim
-            </label>
-            <label>
-                <input type="radio" name="contato_condutor" value="nao"> Não
-            </label>
-            <label>
-                <input type="radio" name="contato_condutor" value="inexistente_mot">Inexistente
-            </label>
-            <input type="text" id="nome_motorista" placeholder="Nome do motorista">
-            <input type="text" id="numero_motorista" placeholder="Número do telefone">
+                <input type="radio" name="contato_condutor" value="sim" onclick="toggleOcorrencia('contato_condutor', 'ocorrencia_motorista')"> Sim
+              </label>
+              <label>
+                <input type="radio" name="contato_condutor" value="nao" onclick="toggleOcorrencia('contato_condutor', 'ocorrencia_motorista')"> Não
+              </label>
+              <label>
+                <input type="radio" name="contato_condutor" value="inexistente_mot" onclick="toggleOcorrencia('contato_condutor', 'ocorrencia_motorista')"> Inexistente
+              </label>
+              <input type="text" id="nome_motorista" placeholder="Nome do motorista">
+              <input type="text" id="numero_motorista" placeholder="Número do telefone">
+              <input type="text" id="ocorrencia_motorista" placeholder="Ocorrência" style="display: none;">
         </div>
         <div class="question">
             <p>Contato com o Responsável?</p>
             <label>
-                <input type="radio" name="contato_responsavel" value="sim"> Sim
+                <input type="radio" name="contato_responsavel" value="sim" onclick="toggleOcorrencia('contato_responsavel', 'ocorrencia_responsavel')"> Sim
             </label>
             <label>
-                <input type="radio" name="contato_responsavel" value="nao"> Não
+                <input type="radio" name="contato_responsavel" value="nao" onclick="toggleOcorrencia('contato_responsavel', 'ocorrencia_responsavel')"> Não
             </label>
             <label>
-                <input type="radio" name="contato_responsavel" value="inexistente_resp">Inexistente
+                <input type="radio" name="contato_responsavel" value="inexistente_resp" onclick="toggleOcorrencia('contato_responsavel', 'ocorrencia_responsavel')">Inexistente
             </label>
             <input type="text" id="nome_responsavel" placeholder="Nome do responsável">
             <input type="text" id="numero_responsavel" placeholder="Número do responsável">
+            <input type="text" id="ocorrencia_responsavel" placeholder="Ocorrência" style="display: none;">
         </div>
         <div class="question">
             <p>Contato com o Responsável Via Grupo</p>
@@ -124,16 +126,17 @@
         <div class="question">
             <p>Contato com a policia/continuidade?</p>
             <label>
-                <input type="radio" name="acionamento_policial" value="sim"> Sim
+                <input type="radio" name="acionamento_policial" value="sim" onclick="toggleOcorrencia('acionamento_policial', 'ocorrencia_policial')"> Sim
             </label>
             <label>
-                <input type="radio" name="acionamento_policial" value="nao"> Não
+                <input type="radio" name="acionamento_policial" value="nao" onclick="toggleOcorrencia('acionamento_policial', 'ocorrencia_policial')"> Não
             </label>
             <label>
                 <input type="radio" name="continuidade_policial" value="Continuidade"> Continuidade
             </label>
             <input type="text" id="nome_policial" placeholder="Local da PRF/PM">
             <input type="text" id="numero_policial" placeholder="Número da PRF/PM">
+            <input type="text" id="ocorrencia_policial" placeholder="Nome do Agente" style="display: none;">
         </div>
         <div>
             <button id="gerarTexto_tab" class="btn btn-success">Gerar/Copiar</button>
