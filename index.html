@@ -1,188 +1,66 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="shortcut icon" type="imagex/png" href="/imagens/envelope-at-fill.svg">
-    <title>SisMail</title>
-    <link rel="stylesheet" href="/CSS/style.css">
-    <link rel="stylesheet" href="/CSS/menustyle.css">
+    <title>LOGIN PAGE</title>
+    <link rel="stylesheet" href="/css/style_log.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    
 </head>
 <body>
-    <header>
-        <nav class="menu-lateral">
-            <div class="btn-expandir">
-                <i class="bi bi-list" id="btn-exp"></i>
-            </div><!--btn-expandir-->
-            <ul>
-                <li class="item-menu">
-                    <a href="index.html">
-                        <span class="icon"><i class="bi bi-house"></i></span>
-                        <span class="txt-link">Home</span>
-                    </a>
-                </li>
-                <li class="item-menu">
-                    <a href="/pags/notes.html">
-                        <span class="icon"><i class="bi bi-stickies"></i></span>
-                        <span class="txt-link">Notes</span>
-                    </a>
-                </li>
-                <li class="item-menu">
-                    <a href="/pags/emails.html">
-                        <span class="icon"><i class="bi bi-envelope-plus"></i></span>
-                        <span class="txt-link">Email</span>
-                    </a>
-                </li>
-                <li class="item-menu">
-                    <a href="/pags/tabs.html">
-                        <span class="icon"><i class="bi bi-list-task"></i></span>
-                        <span class="txt-link">Tabela</span>
-                    </a>
-                </li>
-                <li class="item-menu">
-                    <a href="/pags/postos.html">
-                        <span class="icon"><i class="bi bi-geo-alt"></i></span>
-                        <span class="txt-link">Postos</span>
-                    </a>
-                </li>
-                <li class="item-menu">
-                    <a href="/pags/pr.html">
-                        <span class="icon"><i class="bi bi-car-front"></i></span>
-                        <span class="txt-link">PR</span>
-                    </a>
-                </li>
-                <li class="item-menu">
-                    <a href="/pags/qbox.html">
-                        <span class="icon"><i class="bi bi-ev-station"></i></span>
-                        <span class="txt-link">QBOX</span>
-                    </a>
-                </li>
-            </ul>
-        </nav><!--menu-lateral-->
-        <lord-icon
-        src="https://cdn.lordicon.com/lupuorrc.json"
-        trigger="loop"
-        style="width:250px;height:250px">
-    </lord-icon>
-    </header>
-    <div class="container">
-        <div class="tab-container">
-            <h1>SisMail</h1>
-            <p>Resumo de Tratativas</p>
-            <main class="tab-container">
-                <article class="trat_qbox">
-                  <div class="square"></div>
-                  <h2>Perda de sinal</h2>
-                  <ol>
-                    <li>Enviar os comandos (Soliticitar posição / Sirene)</li>
-                    <li>Contato com o motorista</li>
-                    <li>Contato com o reponsavel ou grupo</li>
-                    <li>Contato com a PRF ou PM mais proxima</li>
-                    <li>Regitrar ocorrencia no Sistec</li>
-                  </ol>
-                </article>
-                <article class="trat_qbox">
-                    <div class="square"></div>
-                    <h2>Alerta de Desengate ou Bau</h2>
-                    <ol>
-                      <li>Enviar os comandos (Sirene e Bloqueio)</li>
-                      <li>Contato com o motorista (Solicitar foto do Chicote e Porta do bau)</li>
-                      <li>Contato com o reponsavel ou grupo</li>
-                      <li>Contato com a PRF ou PM mais proxima</li>
-                      <li>Regitrar ocorrencia no Sistec</li>
-                    </ol>
-                  </article>
-                <article class="trat_qbox">
-                    <div class="square"></div>
-                    <h2>Botão de Panico</h2>
-                    <ol>
-                      <li>Não enviar Sirene nem Bloqueio</li>
-                      <li>Contato com o motorista (Não falar sobre o Panico)</li>
-                      <li>Contato com o reponsavel ou grupo</li>
-                      <li>Contato com a PRF ou PM mais proxima</li>
-                      <li>Regitrar ocorrencia no Sistec</li>
-                    </ol>
-                  </article>
-                <article class="trat_qbox">
-                    <div class="square"></div>
-                    <h2>Parada não Informada</h2>
-                    <ol>
-                      <li>Enviar os comandos (Sirene e Bloqueio)</li>
-                      <li>Contato com o motorista</li>
-                      <li>Contato com o reponsavel ou grupo</li>
-                      <li>Contato com a PRF ou PM mais proxima</li>
-                      <li>Regitrar ocorrencia no Sistec</li>
-                    </ol>
-                  </article>
-                <article class="trat_qbox">
-                    <div class="square"></div>
-                    <h2>Parada em local não Homologado</h2>
-                    <ol>
-                      <li>Enviar os comandos (Sirene e Bloqueio)</li>
-                      <li>Contato com o motorista</li>
-                      <li>Contato com o reponsavel ou grupo</li>
-                      <li>Contato com a PRF ou PM mais proxima</li>
-                      <li>Regitrar ocorrencia no Sistec</li>
-                    </ol>
-                  </article>
-                <article class="trat_qbox">
-                    <div class="square"></div>
-                    <h2>Solitação de comandos</h2>
-                    <ol>
-                      <li>Não enviar caso o veiculo não tenha SM</li>
-                      <li>Enviar caso tenha sido solicitado pelo reponsavel</li>
-                    </ol>
-                  </article>
-                <article class="trat_qbox">
-                    <div class="square"></div>
-                    <h2>Locais Autorizados para pernoite</h2>
-                    <ol>
-                      <li>Postos 24h</li>
-                      <li>Postos Fiscais</li>
-                      <li>Raio de cliente</li>
-                    </ol>
-                  </article>
-                <article class="trat_qbox">
-                    <div class="square"></div>
-                    <h2>Particulariedades Globo</h2>
-                    <ol>
-                      <li>Não cobrar parada em residencia ou local não Homologado</li>
-                      <li>Registrar ocorrencia no Sistec sem mencionar local não homologado</li>
-                      <li>Não notificar o reponsavel sobre locais ou parada exedida</li>
-                    </ol>
-                  </article>
-                <article class="trat_qbox">
-                    <div class="square"></div>
-                    <h2>Particulariedades Otimiza</h2>
-                    <ol>
-                      <li>Não finalizar a SM sem confirmar no grupo</li>
-                      <li>Finalizar SM caso tenha sido retirado o espelhamento</li> 
-                    </ol>
-                  </article>
-                <article class="trat_qbox">
-                    <div class="square"></div>
-                    <h2>Particulariedades BullLog</h2>
-                    <ol>
-                      <li>Fazer tabela para acionamento</li>
-                      <li>Não entrar em contato via ligação</li> 
-                    </ol>
-                  </article>
-                <article class="trat_qbox">
-                    <div class="square"></div>
-                    <h2>Particulariedades Fassilog</h2>
-                    <ol>
-                      <li>Fazer tabela para acionamento ou situação</li>
-                    </ol>
-                  </article>
+    
+    <div class="container" id="container">
+        <div class="form-container sing-up">
+            <form>
+                <h1>Criar conta</h1>
+                <span>Use seu e-mail para se registrar</span>
+                <input type="email" placeholder="E-mail" id="reg_email">
+                <input type="password" placeholder="Senha">
+                <button id="registrar">Enviar!</button>
+                <p>© 2024 Pedro Henrique</p>
+            </form>
+        </div>
+        <div class="form-container sing-in">
+            <form>
+                <h1>Fazer Login</h1>
+                <span>Use seu e-mail para logar</span>
+                <input type="email" placeholder="E-mail">
+                <input type="password" placeholder="Senha">
+                <button>Entrar</button>
+                <p>© 2024 Pedro Henrique</p>
+            </form>
+            <p></p>
+        </div>
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h1>Bem vindo de novo!</h1>
+                    <p>Entre com seus dados para efetuar login</p>
+                    <button class="hidden" id="login">Entrar</button>
+                 </div>
+                <div class="toggle-panel toggle-right">
+                    <h1>Olá, amigo</h1>
+                    <p>Registre seus dados para entrar</p>
+                    <button class="hidden" id="register">Registrar</button>
+                </div>
             </div>
         </div>
     </div>
+
 </body>
-<script src="/js/script.js"></script>
-<script src="/js/menu.js"></script>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>   
+<script src="/js/script_log.js"></script>
+<script src="js/sisauth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-auth-compat.js"></script>
+<script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyADYP33W40W4dCZCPb50YSX0jesT0XXmRo",
+            authDomain: "sisauth-ab1f9.firebaseapp.com",
+            projectId: "sisauth-ab1f9",
+            storageBucket: "sisauth-ab1f9.firebasestorage.app",
+            messagingSenderId: "702719969696",
+            appId: "1:702719969696:web:4b8e961823989f33c4fcc5"
+        };
+        firebase.initializeApp(firebaseConfig);
+</script>
 </html>

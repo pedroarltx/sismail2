@@ -18,7 +18,7 @@
         </div><!--btn-expandir-->
         <ul>
             <li class="item-menu">
-                <a href="index.html">
+                <a href="/pags/home.html">
                     <span class="icon"><i class="bi bi-house"></i></span>
                     <span class="txt-link">Home</span>
                 </a>
@@ -68,82 +68,83 @@
     </lord-icon>
   </header>
   <div class="container">
-    <div class="tab-container">
-      <article class="emailalt">
-        <div class="square"></div>
-        <h2>E-mails Padrões</h2>       
-        <div class="question">
-            <p>Contato com o condutor?</p>
-            <label>
-                <input type="radio" name="contato_condutor" value="sim" onclick="toggleOcorrencia('contato_condutor', 'ocorrencia_motorista')"> Sim
-              </label>
-              <label>
-                <input type="radio" name="contato_condutor" value="nao" onclick="toggleOcorrencia('contato_condutor', 'ocorrencia_motorista')"> Não
-              </label>
-              <label>
-                <input type="radio" name="contato_condutor" value="inexistente_mot" onclick="toggleOcorrencia('contato_condutor', 'ocorrencia_motorista')"> Inexistente
-              </label>
-              <input type="text" id="nome_motorista" placeholder="Nome do motorista">
-              <input type="text" id="numero_motorista" placeholder="Número do telefone">
-              <input type="text" id="ocorrencia_motorista" placeholder="Ocorrência" style="display: none;">
+        <div class="tab-container">
+        <article class="emailalt">
+            <div class="square"></div>
+            <h2>E-mails Padrões</h2>       
+            <div class="question">
+                <p>Contato com o condutor?</p>
+                <label>
+                    <input type="radio" name="contato_condutor" value="sim" onclick="toggleOcorrencia('contato_condutor', 'ocorrencia_motorista')"> Sim
+                </label>
+                <label>
+                    <input type="radio" name="contato_condutor" value="nao" onclick="toggleOcorrencia('contato_condutor', 'ocorrencia_motorista')"> Não
+                </label>
+                <label>
+                    <input type="radio" name="contato_condutor" value="inexistente_mot" onclick="toggleOcorrencia('contato_condutor', 'ocorrencia_motorista')"> Inexistente
+                </label>
+                <input type="text" id="nome_motorista" placeholder="Nome do motorista">
+                <input type="text" id="numero_motorista" placeholder="Número do telefone">
+                <input type="text" id="ocorrencia_motorista" placeholder="Ocorrência" style="display: none;">
+            </div>
+            <div class="question">
+                <p>Contato com o Responsável?</p>
+                <label>
+                    <input type="radio" name="contato_responsavel" value="sim" onclick="toggleOcorrencia('contato_responsavel', 'ocorrencia_responsavel')"> Sim
+                </label>
+                <label>
+                    <input type="radio" name="contato_responsavel" value="nao" onclick="toggleOcorrencia('contato_responsavel', 'ocorrencia_responsavel')"> Não
+                </label>
+                <label>
+                    <input type="radio" name="contato_responsavel" value="inexistente_resp" onclick="toggleOcorrencia('contato_responsavel', 'ocorrencia_responsavel')">Inexistente
+                </label>
+                <input type="text" id="nome_responsavel" placeholder="Nome do responsável">
+                <input type="text" id="numero_responsavel" placeholder="Número do responsável">
+                <input type="text" id="ocorrencia_responsavel" placeholder="Ocorrência" style="display: none;">
+            </div>
+            <div class="question">
+                <p>Contato com o Responsável Via Grupo</p>
+                <label>
+                    <input type="radio" name="contato_responsavel_grupo" value="Qbox"> Qbox
+                </label>
+                <label>
+                    <input type="radio" name="contato_responsavel_grupo" value="Otimiza"> Otimiza
+                </label>
+                <label>
+                    <input type="radio" name="contato_responsavel_grupo" value="Adege"> Adege
+                </label>
+                <label>
+                    <input type="radio" name="contato_responsavel_grupo" value="GVM"> GVM
+                </label>
+                <label>
+                    <input type="radio" name="contato_responsavel_grupo" value="jvtrans"> JV Transportes
+                </label>
+                <label>
+                    <input type="radio" name="contato_responsavel_grupo" value="Rapido_parana"> Rápido Paraná
+                </label>
+            </div>
+            <div class="question">
+                <p>Contato com a policia/continuidade?</p>
+                <label>
+                    <input type="radio" name="acionamento_policial" value="sim" onclick="toggleOcorrencia('acionamento_policial', 'ocorrencia_policial')"> Sim
+                </label>
+                <label>
+                    <input type="radio" name="acionamento_policial" value="nao" onclick="toggleOcorrencia('acionamento_policial', 'ocorrencia_policial')"> Não
+                </label>
+                <label>
+                    <input type="radio" name="continuidade_policial" value="Continuidade"> Continuidade
+                </label>
+                <input type="text" id="nome_policial" placeholder="Local da PRF/PM">
+                <input type="text" id="numero_policial" placeholder="Número da PRF/PM">
+                <input type="text" id="ocorrencia_policial" placeholder="Nome do Agente" style="display: none;">
+            </div>
+            <div>
+                <button id="gerarTexto_tab" class="btn btn-success">Gerar/Copiar</button>
+                <button id="limparEscolhas" class="btn btn-danger">Limpar Escolhas</button>
+                <textarea id="textoGerado" rows="4" cols="50" readonly style="display: none;"></textarea>
+            </div>
+        </article>
         </div>
-        <div class="question">
-            <p>Contato com o Responsável?</p>
-            <label>
-                <input type="radio" name="contato_responsavel" value="sim" onclick="toggleOcorrencia('contato_responsavel', 'ocorrencia_responsavel')"> Sim
-            </label>
-            <label>
-                <input type="radio" name="contato_responsavel" value="nao" onclick="toggleOcorrencia('contato_responsavel', 'ocorrencia_responsavel')"> Não
-            </label>
-            <label>
-                <input type="radio" name="contato_responsavel" value="inexistente_resp" onclick="toggleOcorrencia('contato_responsavel', 'ocorrencia_responsavel')">Inexistente
-            </label>
-            <input type="text" id="nome_responsavel" placeholder="Nome do responsável">
-            <input type="text" id="numero_responsavel" placeholder="Número do responsável">
-            <input type="text" id="ocorrencia_responsavel" placeholder="Ocorrência" style="display: none;">
-        </div>
-        <div class="question">
-            <p>Contato com o Responsável Via Grupo</p>
-            <label>
-                <input type="radio" name="contato_responsavel_grupo" value="Qbox"> Qbox
-            </label>
-            <label>
-                <input type="radio" name="contato_responsavel_grupo" value="Otimiza"> Otimiza
-            </label>
-            <label>
-                <input type="radio" name="contato_responsavel_grupo" value="Adege"> Adege
-            </label>
-            <label>
-                <input type="radio" name="contato_responsavel_grupo" value="GVM"> GVM
-            </label>
-            <label>
-                <input type="radio" name="contato_responsavel_grupo" value="jvtrans"> JV Transportes
-            </label>
-            <label>
-                <input type="radio" name="contato_responsavel_grupo" value="Rapido_parana"> Rápido Paraná
-            </label>
-        </div>
-        <div class="question">
-            <p>Contato com a policia/continuidade?</p>
-            <label>
-                <input type="radio" name="acionamento_policial" value="sim" onclick="toggleOcorrencia('acionamento_policial', 'ocorrencia_policial')"> Sim
-            </label>
-            <label>
-                <input type="radio" name="acionamento_policial" value="nao" onclick="toggleOcorrencia('acionamento_policial', 'ocorrencia_policial')"> Não
-            </label>
-            <label>
-                <input type="radio" name="continuidade_policial" value="Continuidade"> Continuidade
-            </label>
-            <input type="text" id="nome_policial" placeholder="Local da PRF/PM">
-            <input type="text" id="numero_policial" placeholder="Número da PRF/PM">
-            <input type="text" id="ocorrencia_policial" placeholder="Nome do Agente" style="display: none;">
-        </div>
-        <div>
-            <button id="gerarTexto_tab" class="btn btn-success">Gerar/Copiar</button>
-            <button id="limparEscolhas" class="btn btn-danger">Limpar Escolhas</button>
-            <textarea id="textoGerado" rows="4" cols="50" readonly style="display: none;"></textarea>
-        </div>
-      </article>
     </div>
     <div class="tab-container">
         <article class="rest">
