@@ -23,6 +23,10 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 2000);
   }
 
+  document.getElementById('gerarTexto_tab').addEventListener('click', function () {
+    document.forms['contat'].submit();
+});
+
   // Função para gerar o texto com base nos inputs
   document.getElementById('gerarTexto_tab').addEventListener('click', () => {
       let texto = "";
