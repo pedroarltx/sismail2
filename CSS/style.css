@@ -33,6 +33,11 @@ body {
     background-color: var(--background-color);
 }
 
+.emailalt .question > p {
+    color: #007BFF;
+    font-size: 16px;
+}
+
 #textoGerado,
 .content, 
 #alerta {
@@ -265,7 +270,7 @@ button:active {
 input[type="text"], input[type="number"] {
     padding: var(--input-padding);
     margin: var(--input-margin);
-    border: 1px solid #ccc;
+    border: 1px solid #000000b8;
     border-radius: var(--border-radius);
     font-size: 12px;
     width: 350px;
@@ -276,6 +281,7 @@ input[type="text"], input[type="number"] {
 #ocorrencia_motorista,
 #ocorrencia_responsavel{
     width: 550px;
+    height: 55px;
 }
 #ocorrencia_policial{
     width: 250px;

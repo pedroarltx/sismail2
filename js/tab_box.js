@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const ocorrenciaMotorista = document.getElementById('ocorrencia_motorista').value.trim();
       if (contatoCondutor) {
           if (contatoCondutor.value === 'sim') {
-              texto += `Em contato com o Sr. ${nomeMotorista} (motorista), pelo telefone ${numeroMotorista}, onde nos informou que ${ocorrenciaMotorista}. Todos os comandos cabíveis foram enviados ao veículo. Ressaltamos que o veículo permanece posicionado corretamente, em rota, e sem gerar alerta de risco. `;
+              texto += `Em contato com o Sr. ${nomeMotorista} (motorista), pelo telefone ${numeroMotorista}, onde nos informou que ${ocorrenciaMotorista}. Todos os comandos cabíveis foram enviados ao veículo. `;
           } else if (contatoCondutor.value === 'nao') {
               texto += `Tentamos contato com o Sr. ${nomeMotorista} (motorista) através do telefone ${numeroMotorista}, porém a ligação chama até ser direcionada à caixa de mensagem. `;
           } else if (contatoCondutor.value === 'inexistente_mot') {
@@ -164,18 +164,23 @@ function copiarTexto(id) {
 }
 
 function toggleOcorrencia(groupName, ocorrenciaId) {
-    const radios = document.getElementsByName(groupName);
+    const checkboxes = document.getElementsByName(groupName);
     const ocorrencia = document.getElementById(ocorrenciaId);
-
-    for (const radio of radios) {
-        if (radio.checked) {
-            if (radio.value === 'sim') {
-                ocorrencia.style.display = 'block'; // Mostra o campo
-            } else {
-                ocorrencia.style.display = 'none'; // Oculta o campo
-            }
-            return;
+    
+    // Verifica se o checkbox com valor 'sim' está marcado
+    let showOcorrencia = false;
+    for (const checkbox of checkboxes) {
+        if (checkbox.checked && checkbox.value === 'sim') {
+            showOcorrencia = true;
+            break;  // Se 'sim' estiver marcado, não é necessário continuar a busca
         }
+    }
+
+    // Exibe ou oculta o textarea conforme o valor de showOcorrencia
+    if (showOcorrencia) {
+        ocorrencia.style.display = 'block'; // Mostra o campo
+    } else {
+        ocorrencia.style.display = 'none'; // Oculta o campo
     }
 }
 
