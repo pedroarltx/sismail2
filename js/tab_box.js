@@ -121,9 +121,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // Função para limpar as escolhas
   document.getElementById('limparEscolhas').addEventListener('click', () => {
       // Limpar todos os inputs de radio
-      const radios = document.querySelectorAll('input[type="radio"]');
-      radios.forEach(radio => {
-          radio.checked = false; // Desmarcar todos os radios
+      const checkbox = document.querySelectorAll('input[type="checkbox"]');
+      checkbox.forEach(checkbox => {
+          checkbox.checked = false; // Desmarcar todos os radios
       });
 
       // Limpar os campos de texto
