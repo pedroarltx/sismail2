@@ -127,8 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     toggleOcorrencia('contato_condutor', 'ocorrencia_motorista');  // Atualiza o campo do condutor
     toggleOcorrencia('contato_responsavel', 'ocorrencia_responsavel');  // Atualiza o campo do responsável
-});
-
+    
       // Limpar os campos de texto
       document.getElementById('nome_motorista').value = '';
       document.getElementById('numero_motorista').value = '';
