@@ -86,7 +86,12 @@ label {
     z-index: 1000;
     transition: opacity 0.5s ease;
 }
-
+.col{
+    z-index: 1;
+}
+.menu-lateral{
+    z-index: 2;
+}
 .qboxtrat, .tab-container > article, section {
     background-color: white;
     border: 2px solid #ccc;
