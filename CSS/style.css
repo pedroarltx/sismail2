@@ -32,11 +32,14 @@ body {
     padding: 10px;
     background-color: var(--background-color);
     user-select: none;
+<<<<<<< HEAD
+=======
 }
 
 .emailalt .question > p {
     color: #007BFF;
     font-size: 16px;
+>>>>>>> 328f0719e086b65069ed84fe3ce491f58ac5150b
 }
 
 #textoGerado,
@@ -304,80 +307,58 @@ input[type="text"]:focus, input[type="number"]:focus {
     #ocorrencia_policial{
         width: 150px;
     }
+    #placa_ctt_resp,#mot_ctt_resp,#loc_ctt_resp{
+        width: 150px;
+    }
 }
+#ocorrencia_motorista,
+#ocorrencia_responsavel{
+    width: 550px;
+    height: 55px;
+}
+#ocorrencia_policial{
+    width: 250px;
+}
+#ocorrencia_ctt_resp{
+    height: 55px;
+}
+#nome_motorista,#nome_responsavel,#numero_motorista,#numero_responsavel,#nome_policial,#numero_policial{width: 130px;}
 
-#nome_motorista,
-#nome_responsavel,
-#numero_motorista,
-#numero_responsavel,
-#nome_policial,
-#numero_policial{
-    width: 130px; 
-}
+#Placa,#Carreta,#Motorista,#Operação,#Carga,#Localização,#Situação,#cor,#cpf,#veiculo,#modelo,#carreta_pr,#motorista_pr,#cavalo,#local {position: relative;}
+#Placa {left: 45px;}
+#Carreta {left: 33px;}
+#Motorista {left: 21px;}
+#Operação {left: 17px;}
+#Carga {left: 41px;}
+#Localização {left: 5px;}
+#Situação {left: 25px;}
+#cor {left: 46px;}
+#cpf {left: 40px;}
+#veiculo {left: 10px;}
+#modelo {left: 23px;}
+#carreta_pr {left: 22px;}
+#motorista_pr {left: 10px;}
+#cavalo {left: 25px;}
+#local {left: 35px;}
 
+#placa_ctt_resp,#mot_ctt_resp,#loc_ctt_resp{position: relative;}
+#placa_ctt_resp{left: 55px;}
+#mot_ctt_resp{left: 34px;}
+#loc_ctt_resp{left: 18px;}
 
-
-#Placa{
-    position: relative;
-    left: 45px;
-}
-#Carreta{
-    position: relative;
-    left: 33px;
-}
-#Motorista{
-    position: relative;
-    left: 21px;
-}
-#Operação{
-    position: relative;
-    left: 17px;
-}
-#Carga{
-    position: relative;
-    left: 41px;
-}
-#Localização{
-    position: relative;
-    left: 5px;
-}
-#Situação{
-    position: relative;
-    left: 25px;
-}
-#cor{
-    position: relative;
-    left: 46px;
-}
-#cpf{
-    position: relative;
-    left: 40px;
-}
-#veiculo{
-    position: relative;
-    left: 10px;
-}
-#modelo{
-    position: relative;
-    left: 23px;
-}
-#carreta_pr{
-    position: relative;
-    left: 22px;
-}
-#motorista_pr{
-    position: relative;
-    left: 10px;
-}
-#cavalo{
-    position: relative;
-    left: 25px;
-}
-#veiculo{
-    position: relative;
-    left: 23px;
-}
-#local{
+select{
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius);
+    padding: var(--input-padding);
+    margin: var(--input-margin);
+    font-size: 14px;
+    width: 350px;
+    @media (max-width: 768px) {
+        width: 200px;
+    };
+    text-align: center;
+    transition: border-color 0.3s;
     position: relative;
     left: 35px;
 }
+.tab-container .question > .check_ctt{margin-left: 10px;}

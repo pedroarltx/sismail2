@@ -68,108 +68,167 @@
     </lord-icon>
   </header>
   <div class="container">
-        <div class="tab-container">
-        <article class="emailalt">
-            <h2>E-mails Padrões</h2>       
-            <div class="question">
-                <p>Contato com o condutor?</p>
-                <label>
-                    <input type="checkbox" name="contato_condutor" value="sim" onclick="toggleOcorrencia('contato_condutor', 'ocorrencia_motorista')"> Sim
-                </label>
-                <label>
-                    <input type="checkbox" name="contato_condutor" value="nao" onclick="toggleOcorrencia('contato_condutor', 'ocorrencia_motorista')"> Não
-                </label>
-                <label>
-                    <input type="checkbox" name="contato_condutor" value="inexistente_mot" onclick="toggleOcorrencia('contato_condutor', 'ocorrencia_motorista')"> Inexistente
-                </label>
-                <input type="text" id="nome_motorista" name="nome_motorista" placeholder="Nome do motorista">
-                <input type="text" id="numero_motorista" name="numero_motorista" placeholder="Número do telefone">
-                <textarea id="ocorrencia_motorista" name="ocorrencia_motorista" placeholder="onde nos informou que:" style="display: none;"></textarea>
+    <div class="row">
+        <div class="col">
+            <div class="tab-container">
+                <article class="emailalt">
+                    <h2>E-mails Padrões</h2>       
+                    <div class="question">
+                        <p>Contato com o condutor?</p>
+                        <label>
+                            <input type="radio" name="contato_condutor" value="sim" onclick="toggleOcorrencia1('contato_condutor', 'ocorrencia_motorista')"> Sim
+                        </label>
+                        <label>
+                            <input type="radio" name="contato_condutor" value="nao" onclick="toggleOcorrencia1('contato_condutor', 'ocorrencia_motorista')"> Não
+                        </label>
+                        <label>
+                            <input type="radio" name="contato_condutor_inexistente" value="inexistente_mot" onclick="toggleOcorrencia1('contato_condutor', 'ocorrencia_motorista')"> Inexistente
+                        </label>
+                        <input type="text" id="nome_motorista" name="nome_motorista" placeholder="Nome do motorista">
+                        <input type="text" id="numero_motorista" name="numero_motorista" placeholder="Número do telefone">
+                        <textarea id="ocorrencia_motorista" name="ocorrencia_motorista" placeholder="onde nos informou que:" style="display: none;"></textarea>
+                    </div>
+                    <div class="question">
+                        <p>Contato com o Responsável?</p>
+                        <label>
+                            <input type="radio" name="contato_responsavel" value="sim" onclick="toggleOcorrencia1('contato_responsavel', 'ocorrencia_responsavel')"> Sim
+                        </label>
+                        <label>
+                            <input type="radio" name="contato_responsavel" value="nao" onclick="toggleOcorrencia1('contato_responsavel', 'ocorrencia_responsavel')"> Não
+                        </label>
+                        <label>
+                            <input type="radio" name="contato_responsavel" value="inexistente_resp" onclick="toggleOcorrencia1('contato_responsavel', 'ocorrencia_responsavel')"> Inexistente
+                        </label>
+                        <input type="text" id="nome_responsavel" name="nome_responsavel" placeholder="Nome do responsável">
+                        <input type="text" id="numero_responsavel" name="numero_responsavel" placeholder="Número do responsável">
+                        <textarea type="text" id="ocorrencia_responsavel" name="ocorrencia_responsavel" placeholder="onde nos informou que:" style="display: none;"></textarea>
+                    </div>
+                    <div class="question">
+                        <p>Contato com o Responsável Via Grupo</p>
+                        <label>
+                            <input type="radio" name="contato_responsavel_grupo" value="Qbox"> Qbox
+                        </label>
+                        <label>
+                            <input type="radio" name="contato_responsavel_grupo" value="Otimiza"> Otimiza
+                        </label>
+                        <label>
+                            <input type="radio" name="contato_responsavel_grupo" value="Adege"> Adege
+                        </label>
+                        <label>
+                            <input type="radio" name="contato_responsavel_grupo" value="GVM"> GVM
+                        </label>
+                        <label>
+                            <input type="radio" name="contato_responsavel_grupo" value="jvtrans"> JV Transportes
+                        </label>
+                        <label>
+                            <input type="radio" name="contato_responsavel_grupo" value="Rapido_parana"> Rápido Paraná
+                        </label>
+                    </div>
+                    <div class="question">
+                        <p>Contato com a polícia/continuidade?</p>
+                        <label>
+                            <input type="radio" name="acionamento_policial" value="sim" onclick="toggleOcorrencia1('acionamento_policial', 'ocorrencia_policial')"> Sim
+                        </label>
+                        <label>
+                            <input type="radio" name="acionamento_policial" value="nao" onclick="toggleOcorrencia1('acionamento_policial', 'ocorrencia_policial')"> Não
+                        </label>
+                        <label>
+                            <input type="radio" name="continuidade_policial" value="Continuidade"> Continuidade
+                        </label>
+                        <input type="text" id="nome_policial" name="nome_policial" placeholder="Local da PRF/PM">
+                        <input type="text" id="numero_policial" name="numero_policial" placeholder="Número da PRF/PM">
+                        <input type="text" id="ocorrencia_policial" name="ocorrencia_policial" placeholder="Nome do Agente" style="display: none;">
+                    </div>
+                
+                    <div>
+                        <button id="gerarTexto_tab" type="button" class="btn btn-success">Gerar/Copiar</button>
+                        <button id="limparEscolhas" type="button" class="btn btn-danger">Limpar Escolhas</button>
+                        <textarea id="textoGerado" rows="4" cols="50" readonly style="display: none;"></textarea>
+                    </div>
+                </article>
             </div>
-        
-            <div class="question">
-                <p>Contato com o Responsável?</p>
-                <label>
-                    <input type="checkbox" name="contato_responsavel" value="sim" onclick="toggleOcorrencia('contato_responsavel', 'ocorrencia_responsavel')"> Sim
-                </label>
-                <label>
-                    <input type="checkbox" name="contato_responsavel" value="nao" onclick="toggleOcorrencia('contato_responsavel', 'ocorrencia_responsavel')"> Não
-                </label>
-                <label>
-                    <input type="checkbox" name="contato_responsavel" value="inexistente_resp" onclick="toggleOcorrencia('contato_responsavel', 'ocorrencia_responsavel')"> Inexistente
-                </label>
-                <input type="text" id="nome_responsavel" name="nome_responsavel" placeholder="Nome do responsável">
-                <input type="text" id="numero_responsavel" name="numero_responsavel" placeholder="Número do responsável">
-                <textarea type="text" id="ocorrencia_responsavel" name="ocorrencia_responsavel" placeholder="onde nos informou que:" style="display: none;"></textarea>
+        </div>
+        <div class="col">
+            <div class="tab-container">
+                <article class="question">
+                    <h2>Contato com o responsável</h2>
+                    <p>Placa: <input type="text" id="placa_ctt_resp" name="placa_ctt" placeholder="Placa do veiculo"></p>
+                    <p>Motorista: <input type="text" id="mot_ctt_resp" name="mot_ctt" placeholder="Nome do motorista"></p>
+                    <p>Localização <input type="text" id="loc_ctt_resp" name="loc_ctt" placeholder="Localização"></p>
+                    <p>Contato com o Motorista?</p>
+                    <label><input type="checkbox" name="sim_ctt" id="sim_ctt" value="sim" onclick="toggleOcorrencia('sim_ctt', 'ocorrencia_ctt_resp')"> Sim</label> 
+                    <label><input type="checkbox" name="nao_ctt" id="nao_ctt" value="nao"> Não</label>
+                    <!-- Textarea que ficará oculto inicialmente -->
+                    <textarea id="ocorrencia_ctt_resp" name="ocorrencia_ctt_resp" placeholder="Onde nos informou que:" style="display: none;"></textarea>
+                    <p>Situação:
+                        <select id="sit_ctt_resp" name="sit_ctt">
+                            <option value="" disabled selected>Selecione a situação</option>
+                            <option value="perda_prd">Perda de sinal Rodando</option>
+                            <option value="perda_rdn">Perda de sinal Parado</option>
+                            <option value="alert_dsg">Alerta de Desengate</option>
+                            <option value="abert_bau">Alera de abertura de Bau</option>
+                            <option value="sens_bau">Alera de sensor de Bau</option>
+                            <option value="conf_clt">Confirmação de Cliente</option>
+                            <option value="alert_jammer">Alerta de Jammer</option>
+                            <option value="alert_bat">Alerta de Bateria</option>
+                            <option value="alert_ant">Alerta de Antena</option>
+                            <option value="alert_tec">Alerta de Teclado</option>
+                        </select>
+                    </p>
+                    <div class="check_ctt">
+                        <input type="checkbox" id="show_extra_options" onclick="toggleExtraOptions()"> Mas algum alerta?
+                    </div>
+                    <div id="extra_options" style="display: none; margin-top: 10px; margin-bottom: 10px;">
+                        <p>Situação:
+                            <select id="extra_option_list" name="extra_option_list">
+                                <option value="" disabled selected>Selecione a situação</option>
+                                <option value="perda_prd">Perda de sinal Rodando</option>
+                                <option value="perda_rdn">Perda de sinal Parado</option>
+                                <option value="alert_dsg">Alerta de Desengate</option>
+                                <option value="abert_bau">Alera de abertura de Bau</option>
+                                <option value="sens_bau">Alera de sensor de Bau</option>
+                                <option value="conf_clt">Confirmação de Cliente</option>
+                                <option value="alert_jammer">Alerta de Jammer</option>
+                                <option value="alert_bat">Alerta de Bateria</option>
+                                <option value="alert_ant">Alerta de Antena</option>
+                                <option value="alert_tec">Alerta de Teclado</option>
+                            </select>
+                        </p>
+                    </div>
+                    <button id="gerarTexto_ctt" type="button" class="btn btn-success">Gerar/Copiar</button>
+                    <button id="limparEscolhas_ctt" type="button" class="btn btn-danger">Limpar Escolhas</button>
+                </article>
             </div>
-        
-            <div class="question">
-                <p>Contato com o Responsável Via Grupo</p>
-                <label>
-                    <input type="checkbox" name="contato_responsavel_grupo" value="Qbox"> Qbox
-                </label>
-                <label>
-                    <input type="checkbox" name="contato_responsavel_grupo" value="Otimiza"> Otimiza
-                </label>
-                <label>
-                    <input type="checkbox" name="contato_responsavel_grupo" value="Adege"> Adege
-                </label>
-                <label>
-                    <input type="checkbox" name="contato_responsavel_grupo" value="GVM"> GVM
-                </label>
-                <label>
-                    <input type="checkbox" name="contato_responsavel_grupo" value="jvtrans"> JV Transportes
-                </label>
-                <label>
-                    <input type="checkbox" name="contato_responsavel_grupo" value="Rapido_parana"> Rápido Paraná
-                </label>
+        </div>
+        <div class="col">
+            <div class="tab-container">
+                <article class="rest">
+                    <div class="square"></div>
+                    <h2>E-mail de restabelecimento Perda</h2>
+                    <p id="sinal1">o veículo em questão voltou a posicionar em nosso sistema, segue a rota pré-estabelecida em sua solicitação de monitoramento e não gerou demais violações. Salientamos que a ocorrência policial foi devidamente finalizada.</p>
+                    <button onclick="copiarTexto('sinal1')">Copiar</button>
+                    <h2>E-mail de restabelecimento Alerta</h2>
+                    <p id="alert1">o condutor do veículo em questão voltou a seguir viagem, encontra-se com sinal atualizado e segue a rota pré-estabelecida em sua solicitação de monitoramento, não gerou demais violações. Salientamos que a ocorrência policial foi devidamente finalizada.</p>
+                    <button onclick="copiarTexto('alert1')">Copiar</button>
+                </article>
             </div>
-        
-            <div class="question">
-                <p>Contato com a polícia/continuidade?</p>
-                <label>
-                    <input type="checkbox" name="acionamento_policial" value="sim" onclick="toggleOcorrencia('acionamento_policial', 'ocorrencia_policial')"> Sim
-                </label>
-                <label>
-                    <input type="checkbox" name="acionamento_policial" value="nao" onclick="toggleOcorrencia('acionamento_policial', 'ocorrencia_policial')"> Não
-                </label>
-                <label>
-                    <input type="checkbox" name="continuidade_policial" value="Continuidade"> Continuidade
-                </label>
-                <input type="text" id="nome_policial" name="nome_policial" placeholder="Local da PRF/PM">
-                <input type="text" id="numero_policial" name="numero_policial" placeholder="Número da PRF/PM">
-                <input type="text" id="ocorrencia_policial" name="ocorrencia_policial" placeholder="Nome do Agente" style="display: none;">
+        </div>
+        <div class="col">
+            <div class="tab-container">
+                <article class="email_restabelecimento">
+                    <div class="square"></div>
+                    <h2>Perda em Cliente</h2>
+                    <p id="perclt1">Notificamos que o veículo em questão está com perda de sinal em pátio de cliente/transportadora. Deste modo não seguiremos com o procedimento de contingência. Veículo não gerou alerta antes da perda. Todos os comandos cabíveis foram enviados ao veículo.</p>
+                    <button onclick="copiarTexto('perclt1')">Copiar</button>
+                    <h2>Continuidade de Retirada de Espelhamento</h2>
+                    <p id="retirada">Notificamos que o veículo em questão permanece sem o espelhamento para nossa central. Desta forma notificamos os responsáveis.</p>
+                    <button onclick="copiarTexto('retirada')">Copiar</button>
+                </article>
             </div>
-        
-            <div>
-                <button id="gerarTexto_tab" type="button" class="btn btn-success">Gerar/Copiar</button>
-                <button id="limparEscolhas" type="button" class="btn btn-danger">Limpar Escolhas</button>
-                <textarea id="textoGerado" rows="4" cols="50" readonly style="display: none;"></textarea>
-            </div>
-        </article>
-    <div class="tab-container">
-        <article class="rest">
-            <div class="square"></div>
-            <h2>E-mail de restabelecimento Perda</h2>
-            <p id="sinal1">o veículo em questão voltou a posicionar em nosso sistema, segue a rota pré-estabelecida em sua solicitação de monitoramento e não gerou demais violações. Salientamos que a ocorrência policial foi devidamente finalizada.</p>
-            <button onclick="copiarTexto('sinal1')">Copiar</button>
-            <h2>E-mail de restabelecimento Alerta</h2>
-            <p id="alert1">o condutor do veículo em questão voltou a seguir viagem, encontra-se com sinal atualizado e segue a rota pré-estabelecida em sua solicitação de monitoramento, não gerou demais violações. Salientamos que a ocorrência policial foi devidamente finalizada.</p>
-            <button onclick="copiarTexto('alert1')">Copiar</button>
-        </article>
-        
-        <article class="email_restabelecimento">
-            <div class="square"></div>
-            <h2>Perda em Cliente</h2>
-            <p id="perclt1">Notificamos que o veículo em questão está com perda de sinal em pátio de cliente/transportadora. Deste modo não seguiremos com o procedimento de contingência. Veículo não gerou alerta antes da perda. Todos os comandos cabíveis foram enviados ao veículo.</p>
-            <button onclick="copiarTexto('perclt1')">Copiar</button>
-            <h2>Continuidade de Retirada de Espelhamento</h2>
-            <p id="retirada">Notificamos que o veículo em questão permanece sem o espelhamento para nossa central. Desta forma notificamos os responsáveis.</p>
-            <button onclick="copiarTexto('retirada')">Copiar</button>
-        </article>
+        </div>
     </div>
   </div>
-  <div id="alerta">Texto copiado!</div>
+<div id="alerta">Texto copiado!</div>
 </body>
 <script src="https://www.gstatic.com/firebasejs/9.1.3/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.1.3/firebase-auth.js"></script>
@@ -179,4 +238,5 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>   
 <script src="/js/tab_box.js"></script>
 <script src="/js/menu.js"></script>
+<script src="/js/cttresp.js"></script>
 </html>
