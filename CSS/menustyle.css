@@ -17,9 +17,9 @@ body{
 nav.menu-lateral{
     width: 80px;
     height: 100%;
-    background-color: #202020;
+    background-color: #00171F;
     padding: 40px 0 40px 1%;
-    box-shadow: 3px 0 0 #FF0077;
+    box-shadow: 3px 0 0 #007EA7;
 
     position: fixed;
     top: 0;
@@ -55,11 +55,11 @@ ul li.item-menu{
 }
 
 ul li.ativo{
-    background-color: #FF0077;
+    background-color: #007EA7;
 }
 
 ul li.item-menu:hover{
-    background: #FF0077;
+    background: #007EA7;
 }
 
 ul li.item-menu a{

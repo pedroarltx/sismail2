@@ -17,12 +17,12 @@
             <i class="bi bi-list" id="btn-exp"></i>
         </div><!--btn-expandir-->
         <ul>
-            <li class="item-menu">
-                <a href="/pags/home.html">
-                    <span class="icon"><i class="bi bi-house"></i></span>
-                    <span class="txt-link">Home</span>
-                </a>
-            </li>
+          <li class="item-menu">
+              <a href="/pags/home.html">
+                  <span class="icon"><i class="bi bi-house"></i></span>
+                  <span class="txt-link">Home</span>
+              </a>
+          </li>
             <li class="item-menu">
                 <a href="/pags/notes.html">
                     <span class="icon"><i class="bi bi-stickies"></i></span>
@@ -43,7 +43,7 @@
             </li>
             <li class="item-menu">
                 <a href="/pags/postos.html">
-                    <span class="icon"><i class="bi bi-geo-alt"></i></span>
+                    <span class="icon"><i class="bi bi-ev-station"></i></span>
                     <span class="txt-link">Postos</span>
                 </a>
             </li>
@@ -54,9 +54,15 @@
                 </a>
             </li>
             <li class="item-menu">
-                <a href="/pags/qbox.html">
-                    <span class="icon"><i class="bi bi-ev-station"></i></span>
-                    <span class="txt-link">QBOX</span>
+              <a href="/pags/qbox.html">
+                  <span class="icon"><i class="bi bi-quora"></i></span>
+                  <span class="txt-link">QBOX</span>
+              </a>
+          </li>
+            <li class="item-menu">
+                <a href="/pags/parts.html">
+                    <span class="icon"><i class="bi bi-question-octagon"></i></span>
+                    <span class="txt-link">Particulariedades</span>
                 </a>
             </li>
         </ul>
@@ -84,9 +90,9 @@
                         <label>
                             <input type="radio" name="contato_condutor_inexistente" value="inexistente_mot" onclick="toggleOcorrencia1('contato_condutor', 'ocorrencia_motorista')"> Inexistente
                         </label>
-                        <input type="text" id="nome_motorista" name="nome_motorista" placeholder="Nome do motorista">
-                        <input type="text" id="numero_motorista" name="numero_motorista" placeholder="Número do telefone">
-                        <textarea id="ocorrencia_motorista" name="ocorrencia_motorista" placeholder="onde nos informou que:" style="display: none;"></textarea>
+                        <input type="text" id="nome_motorista" name="nome_motorista" placeholder="Nome do motorista" style="width: 130px;">
+                        <input type="text" id="numero_motorista" name="numero_motorista" placeholder="Número do telefone" style="width: 130px;">
+                        <textarea id="ocorrencia_motorista" name="ocorrencia_motorista" placeholder="onde nos informou que:" style="display: none; width: 550px; height: 55px;"></textarea>
                     </div>
                     <div class="question">
                         <p>Contato com o Responsável?</p>
@@ -99,9 +105,9 @@
                         <label>
                             <input type="radio" name="contato_responsavel" value="inexistente_resp" onclick="toggleOcorrencia1('contato_responsavel', 'ocorrencia_responsavel')"> Inexistente
                         </label>
-                        <input type="text" id="nome_responsavel" name="nome_responsavel" placeholder="Nome do responsável">
-                        <input type="text" id="numero_responsavel" name="numero_responsavel" placeholder="Número do responsável">
-                        <textarea type="text" id="ocorrencia_responsavel" name="ocorrencia_responsavel" placeholder="onde nos informou que:" style="display: none;"></textarea>
+                        <input type="text" id="nome_responsavel" name="nome_responsavel" placeholder="Nome do responsável" style="width: 130px;">
+                        <input type="text" id="numero_responsavel" name="numero_responsavel" placeholder="Número do responsável" style="width: 130px;">
+                        <textarea type="text" id="ocorrencia_responsavel" name="ocorrencia_responsavel" placeholder="onde nos informou que:" style="display: none; width: 550px; height: 55px;"></textarea>
                     </div>
                     <div class="question">
                         <p>Contato com o Responsável Via Grupo</p>
@@ -135,9 +141,9 @@
                         <label>
                             <input type="radio" name="continuidade_policial" value="Continuidade"> Continuidade
                         </label>
-                        <input type="text" id="nome_policial" name="nome_policial" placeholder="Local da PRF/PM">
-                        <input type="text" id="numero_policial" name="numero_policial" placeholder="Número da PRF/PM">
-                        <input type="text" id="ocorrencia_policial" name="ocorrencia_policial" placeholder="Nome do Agente" style="display: none;">
+                        <input type="text" id="nome_policial" name="nome_policial" placeholder="Local da PRF/PM" style="width: 130px;">
+                        <input type="text" id="numero_policial" name="numero_policial" placeholder="Número da PRF/PM" style="width: 130px;">
+                        <input type="text" id="ocorrencia_policial" name="ocorrencia_policial" placeholder="Nome do Agente" style="display: none; width: 130px;">
                     </div>
                 
                     <div>
@@ -152,14 +158,14 @@
             <div class="tab-container">
                 <article class="question">
                     <h2>Contato com o responsável</h2>
-                    <p>Placa: <input type="text" id="placa_ctt_resp" name="placa_ctt" placeholder="Placa do veiculo"></p>
-                    <p>Motorista: <input type="text" id="mot_ctt_resp" name="mot_ctt" placeholder="Nome do motorista"></p>
-                    <p>Localização <input type="text" id="loc_ctt_resp" name="loc_ctt" placeholder="Localização"></p>
+                    <p>Placa: <input type="text" id="placa_ctt_resp" name="placa_ctt" placeholder="Placa do veiculo" style="left: 45px;"></p>
+                    <p>Motorista: <input type="text" id="mot_ctt_resp" name="mot_ctt" placeholder="Nome do motorista" style="left: 20px;"></p>
+                    <p>Localização <input type="text" id="loc_ctt_resp" name="loc_ctt" placeholder="Localização:" style="left: 10px;"></p>
                     <p>Contato com o Motorista?</p>
                     <label><input type="checkbox" name="sim_ctt" id="sim_ctt" value="sim" onclick="toggleOcorrencia('sim_ctt', 'ocorrencia_ctt_resp')"> Sim</label> 
                     <label><input type="checkbox" name="nao_ctt" id="nao_ctt" value="nao"> Não</label>
                     <!-- Textarea que ficará oculto inicialmente -->
-                    <textarea id="ocorrencia_ctt_resp" name="ocorrencia_ctt_resp" placeholder="Onde nos informou que:" style="display: none;"></textarea>
+                    <textarea id="ocorrencia_ctt_resp" name="ocorrencia_ctt_resp" placeholder="Onde nos informou que:" style="display: none;height: 55px;"></textarea>
                     <p>Situação:
                         <select id="sit_ctt_resp" name="sit_ctt">
                             <option value="" disabled selected>Selecione a situação</option>
