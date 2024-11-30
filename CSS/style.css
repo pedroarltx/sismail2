@@ -179,7 +179,7 @@ button {
     border-radius: var(--btn-radius);
     font-size: var(--btn-font-size);
     cursor: pointer;
-    transition: background-color 0.1s ease, transform 0.35s ease;
+    transition: background-color 0.1s ease, transform 0.2s ease;
 }
 
 .toggle-btn {

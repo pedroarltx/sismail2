@@ -16,6 +16,7 @@ function gerarTexto() {
     const simCheckbox = document.getElementById("sim_ctt").checked;
     const naoCheckbox = document.getElementById("nao_ctt").checked;
     const ocorrencia = document.getElementById("ocorrencia_ctt_resp").value.trim();
+    const plusAlert = document.getElementById("show_extra_options").checked;
 
     if (!placa || !motorista || !localizacao || !situacao) {
         alert("Por favor, preencha todos os campos obrigatórios e selecione uma situação.");
@@ -23,33 +24,35 @@ function gerarTexto() {
     }
 
     const frasesSituacao = {
-        perda_prd: "perda de sinal enquanto o veículo estava rodando",
-        perda_rdn: "perda de sinal enquanto o veículo estava parado",
-        alert_dsg: "alerta de desengate",
-        abert_bau: "alerta de abertura do baú",
-        sens_bau: "alerta de sensor do baú",
+        perda_prd: "esta com perda de sinal enquanto o veículo estava rodando",
+        perda_rdn: "esta com perda de sinal enquanto o veículo estava parado",
+        alert_dsg: "gerou alerta de desengate",
+        abert_bau: "gerou alerta de abertura do baú",
+        sens_bau: "gerou alerta de sensor do baú",
         conf_clt: `Notificamos que o Sr.(a) ${motorista} informou macro de cliente / fim de viagem fora do ponto cadastrado em sua SM, confirma o local? \nSegue localização: ${localizacao}`,
-        alert_jammer: "alerta de jammer.",
-        alert_bat: "alerta de bateria violada",
-        alert_ant: "alerta de antena violada",
-        alert_tec: "alerta de teclado desconectado ou sem funcionamento"
+        alert_jammer: "gerou alerta de jammer.",
+        alert_bat: "gerou alerta de bateria violada",
+        alert_ant: "gerou alerta de antena violada",
+        alert_tec: "gerou alerta de teclado desconectado ou sem funcionamento",
+        prd_ninf: "esta com parada não informada",
+        tcl_bat: "gerou alerta de antena e teclado",
+        chave_geral: `desligou a chave geral. Deste modo gerando alerta de Bateria, Antena e Teclado`
     };
 
     let texto;
 
-    if (simCheckbox) {
-        texto = `Notificamos que o veículo ${placa}, que está com o Sr.(a) ${motorista}, gerou ${frasesSituacao[situacao]}. Conseguimos contato com o motorista onde nos informou que ${ocorrencia}. \nSegue localização: ${localizacao}`;
+    if (plusAlert) {
+        texto = `Notificamos que o veículo ${placa}, que está com o Sr.(a) ${motorista}, ${frasesSituacao[situacao]} e também ${frasesSituacao[situacaoExtra]}. Conseguimos contato com o motorista onde nos informou que ${ocorrencia}. \nSegue localização: ${localizacao}`;
+    } else if (simCheckbox) {
+        texto = `Notificamos que o veículo ${placa}, que está com o Sr.(a) ${motorista}, ${frasesSituacao[situacao]}. Conseguimos contato com o motorista onde nos informou que ${ocorrencia}. \nSegue localização: ${localizacao}`;
     } else if (naoCheckbox) {
-        texto = `Notificamos que o veículo ${placa}, que está com o Sr.(a) ${motorista}, gerou ${frasesSituacao[situacao]}. Não conseguimos contato com o motorista. Deste modo, seguiremos com o plano de contingência até normalizar a situação. \nSegue localização: ${localizacao}`;
-    } else {
-        alert("Por favor, marque 'Sim' ou 'Não' para indicar o contato com o motorista.");
-        return;
+        texto = `Notificamos que o veículo ${placa}, que está com o Sr.(a) ${motorista}, ${frasesSituacao[situacao]}. Não conseguimos contato com o motorista. Deste modo, seguiremos com o plano de contingência até normalizar a situação. \nSegue localização: ${localizacao}`;
     }
-
-    if (situacaoExtra) {
-        texto += `\nO mesmo também gerou ${frasesSituacao[situacaoExtra]}.`;
+    
+    if (situacao === 'conf_clt') {
+        texto = frasesSituacao['conf_clt'];  
     }
-
+    
     // Copiar para a área de transferência
     navigator.clipboard.writeText(texto).then(() => {
         const alerta = document.getElementById('alerta');
