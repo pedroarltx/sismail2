@@ -72,8 +72,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 texto += "Deste modo notificamos os responsáveis através do grupo de WhatsApp JV Transportes - Tecnorisk, onde os deixamos ciente da situação e informados que seguiremos com o procedimento de contingência. ";
             } else if (transportadoras.value === "Rapido_parana") {
                 texto += "Deste modo notificamos os responsáveis através do grupo de WhatsApp Rápido Paraná - Tecnorisk, onde os deixamos ciente da situação e informados que seguiremos com o procedimento de contingência. ";
+            } else if (transportadoras.value === "Bull_log") {
+                texto += "Deste modo notificamos os responsáveis através do grupo de WhatsApp Bull Log - Tecnorisk, onde os deixamos ciente da situação e informados que seguiremos com o procedimento de contingência. ";
+            } else if (transportadoras.value === "restricao") {
+                // Obtém o horário inserido no campo de texto "restricao_text"
+                const restricaoHorario = document.getElementById('restricao_text').value.trim();
+                // Verifica se o horário foi inserido e o inclui no texto
+                if (restricaoHorario) {
+                    texto += `Como descrito em PRG não podemos entrar em contato com o responsável via ligação após ${restricaoHorario} horas, deste modo seguiremos o acionamento policial.`;
+                }
             }
         }
+
   
         // Contato com a polícia
         const nomePolicial = document.getElementById('nome_policial').value.trim();
@@ -83,15 +93,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (acionamentoPolicial) {
             if (acionamentoPolicial.value === 'sim') {
                 texto += `Sendo assim, seguiremos com o procedimento de contingência onde efetuamos contato com a PRF de ${nomePolicial} através do telefone ${numeroPolicial}, onde fomos atendidos pelo Sr. ${ocorrencia_policial}, e o deixamos ciente da situação. Segue nossa proposta de pronta resposta: `;
-            } else {
+            } else if(acionamentoPolicial.value ==='nao') {
                 texto += `Sendo assim, seguimos com o procedimento de contingência onde tentamos contato com a PRF de ${nomePolicial} através do telefone ${numeroPolicial}, mas a ligação é direcionada para caixa postal. Segue nossa proposta de pronta resposta: `;
+            } else if (acionamentoPolicial.value ==='Continuidade'){
+                texto += "Sendo assim, manteremos o acionamento policial ativo até normalizar a situação. Segue nossa proposta de pronta resposta:";
             }
-        }
-  
-        // Continuidade Policial
-        const continuidadePolicial = document.querySelector('input[name="continuidade_policial"]:checked');
-        if (continuidadePolicial && continuidadePolicial.value === 'Continuidade') {
-            texto += "Sendo assim, manteremos o acionamento policial ativo até normalizar a situação. Segue nossa proposta de pronto atendimento:";
         }
   
         // Exibir o texto gerado na textarea (escondida)
@@ -142,6 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('ocorrencia_motorista').style.display = 'none';
         document.getElementById('ocorrencia_responsavel').style.display = 'none';
         document.getElementById('ocorrencia_policial').style.display = 'none';
+        document.getElementById('restricao_text').value = '';
     });
   });
   

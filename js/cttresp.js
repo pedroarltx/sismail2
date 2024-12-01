@@ -36,13 +36,16 @@ function gerarTexto() {
         alert_tec: "gerou alerta de teclado desconectado ou sem funcionamento",
         prd_ninf: "esta com parada não informada",
         tcl_bat: "gerou alerta de antena e teclado",
-        chave_geral: `desligou a chave geral. Deste modo gerando alerta de Bateria, Antena e Teclado`
+        chave_geral: `desligou a chave geral. Deste modo gerando alerta de Bateria, Antena e Teclado`,
+        lclNaut: `esta parado em local não autorizado`
     };
 
     let texto;
 
-    if (plusAlert) {
+    if (plusAlert && simCheckbox) {
         texto = `Notificamos que o veículo ${placa}, que está com o Sr.(a) ${motorista}, ${frasesSituacao[situacao]} e também ${frasesSituacao[situacaoExtra]}. Conseguimos contato com o motorista onde nos informou que ${ocorrencia}. \nSegue localização: ${localizacao}`;
+    } else if(plusAlert && naoCheckbox){
+        texto = `Notificamos que o veículo ${placa}, que está com o Sr.(a) ${motorista}, ${frasesSituacao[situacao]} e também ${frasesSituacao[situacaoExtra]}. Não conseguimos contato com o motorista. Deste modo, seguiremos com o plano de contingência até normalizar a situação. \nSegue localização: ${localizacao}`;
     } else if (simCheckbox) {
         texto = `Notificamos que o veículo ${placa}, que está com o Sr.(a) ${motorista}, ${frasesSituacao[situacao]}. Conseguimos contato com o motorista onde nos informou que ${ocorrencia}. \nSegue localização: ${localizacao}`;
     } else if (naoCheckbox) {
@@ -90,6 +93,7 @@ function limparFormulario() {
     document.getElementById('loc_ctt_resp').value = '';
     document.getElementById('sim_ctt').checked = false;
     document.getElementById('nao_ctt').checked = false;
+    document.getElementById('ocorrencia_ctt_resp').value = '';
     
     // Limpar o textarea de ocorrência
     toggleOcorrencia('sim_ctt', 'ocorrencia_ctt_resp');
@@ -98,13 +102,19 @@ function limparFormulario() {
 document.getElementById('limparEscolhas_ctt').addEventListener('click', limparFormulario);
 document.getElementById("gerarTexto_ctt").addEventListener("click", gerarTexto);
 
-function toggleOcorrencia(checkboxId, textareaId) {
-    const checkbox = document.getElementById(checkboxId);
-    const textarea = document.getElementById(textareaId); // Use o parâmetro textareaId aqui
+function toggleOcorrencia(groupName, ocorrenciaId) {
+    const radios = document.getElementsByName(groupName);
+    const ocorrencia = document.getElementById(ocorrenciaId);
 
-    if (checkbox.checked) {
-        textarea.style.display = 'block';
-    } else {
-        textarea.style.display = 'none';
+    // Verifica se o radio com valor 'sim' está selecionado
+    let showOcorrencia = false;
+    for (const radio of radios) {
+        if (radio.checked && radio.value === 'sim') {
+            showOcorrencia = true;
+            break;
+        }
     }
+
+    // Exibe ou oculta o textarea conforme o valor de showOcorrencia
+    ocorrencia.style.display = showOcorrencia ? 'block' : 'none';
 }

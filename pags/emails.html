@@ -88,7 +88,7 @@
                             <input type="radio" name="contato_condutor" value="nao" onclick="toggleOcorrencia1('contato_condutor', 'ocorrencia_motorista')"> Não
                         </label>
                         <label>
-                            <input type="radio" name="contato_condutor_inexistente" value="inexistente_mot" onclick="toggleOcorrencia1('contato_condutor', 'ocorrencia_motorista')"> Inexistente
+                            <input type="radio" name="contato_condutor" value="inexistente_mot" onclick="toggleOcorrencia1('contato_condutor', 'ocorrencia_motorista')"> Inexistente
                         </label>
                         <input type="text" id="nome_motorista" name="nome_motorista" placeholder="Nome do motorista" style="width: 130px;">
                         <input type="text" id="numero_motorista" name="numero_motorista" placeholder="Número do telefone" style="width: 130px;">
@@ -129,6 +129,13 @@
                         <label>
                             <input type="radio" name="contato_responsavel_grupo" value="Rapido_parana"> Rápido Paraná
                         </label>
+                        <label>
+                            <input type="radio" name="contato_responsavel_grupo" value="Bull_log"> Bull Log
+                        </label>
+                        <label>
+                            <input type="radio" name="contato_responsavel_grupo" value="restricao"> Restrição de Horario
+                            <input type="text" id="restricao_text" name="restricao_text" value="H" placeholder="HORA">
+                        </label>
                     </div>
                     <div class="question">
                         <p>Contato com a polícia/continuidade?</p>
@@ -139,7 +146,7 @@
                             <input type="radio" name="acionamento_policial" value="nao" onclick="toggleOcorrencia1('acionamento_policial', 'ocorrencia_policial')"> Não
                         </label>
                         <label>
-                            <input type="radio" name="continuidade_policial" value="Continuidade"> Continuidade
+                            <input type="radio" name="acionamento_policial" value="Continuidade" onclick="toggleOcorrencia1('acionamento_policial', 'ocorrencia_policial')"> Continuidade
                         </label>
                         <input type="text" id="nome_policial" name="nome_policial" placeholder="Local da PRF/PM" style="width: 130px;">
                         <input type="text" id="numero_policial" name="numero_policial" placeholder="Número da PRF/PM" style="width: 130px;">
@@ -162,8 +169,8 @@
                     <p>Motorista: <input type="text" id="mot_ctt_resp" name="mot_ctt" placeholder="Nome do motorista" style="left: 20px;"></p>
                     <p>Localização <input type="text" id="loc_ctt_resp" name="loc_ctt" placeholder="Localização:" style="left: 10px;"></p>
                     <p>Contato com o Motorista?</p>
-                    <label><input type="checkbox" name="sim_ctt" id="sim_ctt" value="sim" onclick="toggleOcorrencia('sim_ctt', 'ocorrencia_ctt_resp')"> Sim</label> 
-                    <label><input type="checkbox" name="nao_ctt" id="nao_ctt" value="nao"> Não</label>
+                    <label><input type="radio" name="sim_ctt" id="sim_ctt" value="sim" onclick="toggleOcorrencia('sim_ctt', 'ocorrencia_ctt_resp')"> Sim</label> 
+                    <label><input type="radio" name="sim_ctt" id="nao_ctt" value="nao"onclick="toggleOcorrencia('sim_ctt', 'ocorrencia_ctt_resp')"> Não</label>
                     <!-- Textarea que ficará oculto inicialmente -->
                     <textarea id="ocorrencia_ctt_resp" name="ocorrencia_ctt_resp" placeholder="Onde nos informou que:" style="display: none;height: 55px;"></textarea>
                     <p>Situação:
@@ -181,6 +188,7 @@
                             <option value="alert_tec">Alerta de Teclado</option>
                             <option value="prd_ninf">Parada não informada</option>
                             <option value="chave_geral">Chave geral</option>
+                            <option value="lcl_naut">Locao não Autorizado</option>
                         </select>
                     </p>
                     <div class="check_ctt">
@@ -203,6 +211,7 @@
                                 <option value="prd_ninf">Parada não informada</option>
                                 <option value="tcl_bat">Teclado e e Antena</option>
                                 <option value="chave_geral">Chave geral</option>
+                                <option value="lcl_naut">Locao não Autorizado</option>
                             </select>
                         </p>
                     </div>
