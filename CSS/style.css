@@ -44,6 +44,11 @@ label {
 /* Estilos P e H2 */
 h2,p{margin: 10px 10px;}
 
+.question p{
+    font-weight: bold;
+}
+
+
 /* Estilos para ocultar elemento do alert */
 #textoGerado,.content, #alerta {display: none;}
 /* Estilos para o alert */
@@ -87,16 +92,18 @@ textarea, #Ocorrência {
     background-color: white;
     border: 2px solid #ccc;
     border-radius: var(--border-radius);
-    margin: 30px 5px 30px 75px;
-    padding: 10px;
+    margin: 40px 15px 20px 30px;
+    padding: 5px;
     width: 600px;
     height: auto;
     box-shadow: var(--box-shadow);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    scale: 0.9;
 }
 
+
 .tab-container > article.question{
-    margin: 30px 5px 30px 1px;
+    margin: 45px 15px 20px 5px;
     width: 500px;
     height: auto;
 }
