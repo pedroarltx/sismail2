@@ -72,15 +72,14 @@ ul li.item-menu a .txt-link{
     transition: .5s;
 }
 
+
 ul li.item-menu a.active {
     background-color: #007EA7;
+    color: white;
 }
 
-ul li.item-menu a.active .txt-link{
-    color: #fff;
-}
-
-ul li.item-menu a .icon > i{
+ul li.item-menu a .icon > i {
     font-size: 25px;
     margin-left: 10px;
 }
+
